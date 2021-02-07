@@ -59,32 +59,4 @@ const mealDetails = meal =>{
     `  
 }
 
-    /*console.log(foodDetail.strIngredient1);
-    for (let i = 1; i <21; i++) {
-        const element = foodDetail.strIngredient + [i];
-        console.log(element);
-        
-    }
     
-    
-    
-    
-    
-    
-    
-    for (let i = 0; i < food.length; i++) {
-        const foodItem = food[i];
-        console.log(foodItem);
-        const div = document.createElement('div');
-        div.className = 'food';
-        const foodInfo = `
-        <div>
-        <img src=${foodItem.strMealThumb}>
-        </div>
-        <div>
-        <h1 style="text-align:center;">${foodItem.strMeal} </h1>
-        </div>
-        `;
-        div.innerHTML = foodInfo;
-        parentNode.appendChild(div);
-    }*/
