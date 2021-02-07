@@ -1,0 +1,25 @@
+.food{
+    background-color: aliceblue;
+    border:5px solid white;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+#food-container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:5px;
+}
+#food-container img{
+    width:270px;
+    height:226px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+}
+
+#food-detail img{
+    width:588px;
+    height:322px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+
+}
