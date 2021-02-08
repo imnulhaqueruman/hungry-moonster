@@ -17,13 +17,15 @@ const displayFood = food =>{
 
     food.forEach(foodItem => { 
         const div = document.createElement('div');
-        div.className = 'food';
+        //div.className = 'food';
         const foodInfo = `
-        <div>
-        <img onclick="showDetail('${foodItem.idMeal}')" src=${foodItem.strMealThumb}>      
-        </div>
-        <div>
-        <h1 style="text-align:center; font-size:20px;">${foodItem.strMeal} </h1>     
+        <div class="card">
+            <div>
+            <img onclick="showDetail('${foodItem.idMeal}')" src=${foodItem.strMealThumb} class="card-img-top">      
+            </div>
+            <div class="card-body">
+            <h1 style="text-align:center; font-size:20px;" class="card-title">${foodItem.strMeal} </h1>     
+            </div>
         </div>       
         `;
         div.innerHTML = foodInfo;
@@ -43,20 +45,28 @@ const showDetail =  foodId =>{
 }
 const mealDetails = meal =>{
     const foodDiv = document.getElementById('food-detail');
+    //foodDiv.className = 'ingredient';
     foodDiv.innerHTML =  `
-    <div>    
-    <img src=${meal.strMealThumb}>
-    <h1> ${meal.strMeal}</h1>
-    <h3>Ingredient</h3>
-    <li>${meal.strIngredient1}</li>
-    <li>${meal.strIngredient2}</li>
-    <li>${meal.strIngredient3}</li>
-    <li>${meal.strIngredient4}</li>
-    <li>${meal.strIngredient5}</li>
-    <li>${meal.strIngredient7}</li>
-    <li>${meal.strIngredient8}</li>
-   
-    </div>      
+    <div> 
+        <div class="card" style="width: 38rem;">
+            <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
+             <div class="card-body">
+                <h1 class="card-title">${meal.strMeal}</h1>
+                <h3>Ingredient</h3>
+                <ul class="card-text">
+                <li>${meal.strIngredient1}</li>
+                <li>${meal.strIngredient2}</li>
+                <li>${meal.strIngredient3}</li>
+                <li>${meal.strIngredient4}</li>
+                <li>${meal.strIngredient5}</li>
+                <li>${meal.strIngredient7}</li>
+                <li>${meal.strIngredient8}</li>
+               
+                </ul>
+                
+            </div>
+        </div>   
+    </div>
     `  
 }
 
