@@ -1,21 +1,20 @@
-const searchBtn = document.getElementById('search-btn');
-searchBtn.addEventListener('click', () =>{
+const searchBtn =  () =>{
     const inputMeal = document.getElementById('meal-name').value;
-    getInput();
     const url  = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputMeal}`;
     fetch(url)
-    .then(res =>res.json())
+    .then(res => res.json())
     .then(data => displayFood(data.meals))
-})
-const getInput = () =>{
-    
-    let foodContainer = document.getElementById('food-container');
-    const foodDiv = document.getElementById('food-detail');
-    foodDiv.innerText ="";
-    foodContainer.innerText = "";
-};
+    .catch(error => desiplayError('Something went wrong!! Please try agian Later !'))
+
+}
+
 const displayFood = food =>{
     const parentNode = document.getElementById('food-container');
+    parentNode.innerHTML = '';
+    // ingredient hide for every search 
+    const foodDiv = document.getElementById('food-detail');
+    foodDiv.innerText ="";
+
     food.forEach(foodItem => { 
         const div = document.createElement('div');
         div.className = 'food';
@@ -33,11 +32,13 @@ const displayFood = food =>{
     });
    
 }
-const showDetail = foodId =>{
+const showDetail =  foodId =>{
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`;
     fetch(url)
     .then(res => res.json())
-    .then(data => mealDetails(data.meals[0]));
+    .then(data => mealDetails(data.meals[0]))
+    .catch(error => desiplayError('Something went wrong !! Please try again later'))
+    
 
 }
 const mealDetails = meal =>{
@@ -57,6 +58,11 @@ const mealDetails = meal =>{
    
     </div>      
     `  
+}
+
+const desiplayError = error =>{
+    const errorText = document.getElementById('error-messeage');
+    errorText.innerText = error;
 }
 
     

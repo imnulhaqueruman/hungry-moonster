@@ -17,17 +17,18 @@
             <div class="input-group mb-3">
                 <input id="meal-name" type="text" class="form-control" placeholder="Serach food name...">
                 <div class="input-group-append">
-                    <button id="search-btn" type="button" class="btn btn-danger">Search</button>
+                    <button id="search-btn" onclick="searchBtn()" type="button" class="btn btn-danger">Search</button>
                 </div>
             </div>
         </form>
-       
+        <h3 id ="error-messeage" class="text-danger"></h3>
        <div id="food-detail" class="d-flex justify-content-center p-5">
 
        </div>
         <div id="food-container">
            
         </div>
+        
     </div>
     <script src='app.js'></script>
 </body>
